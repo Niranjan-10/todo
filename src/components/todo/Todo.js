@@ -234,7 +234,9 @@ const Todo = () => {
           placeholder="User ID (only Number)"
           onChange={(e) => {
             if (!isNaN(e.target.value)) {
-              setUserId(e.target.value);
+              setUserId(parseInt(e.target.value));
+            } else {
+              setUserId("");
             }
           }}
           style={{
@@ -244,10 +246,12 @@ const Todo = () => {
         />
         <Input
           value={id}
-          placeholder="Todo ID"
+          placeholder="Todo ID (only Number)"
           onChange={(e) => {
             if (!isNaN(e.target.value)) {
-              setId(e.target.value);
+              setId(parseInt(e.target.value));
+            } else {
+              setId("");
             }
           }}
           style={{
