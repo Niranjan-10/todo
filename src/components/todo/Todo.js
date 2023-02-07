@@ -222,7 +222,11 @@ const Todo = () => {
           handleOnSubmit();
         }}
         onCancel={() => {
+          resetForm();
           setOpenModal(false);
+          if (updateModal) {
+            setUpdateModal(false);
+          }
         }}
         okText={updateModal ? "Update" : "Add Todo"}
         okButtonProps={{
